@@ -80,12 +80,6 @@ export class DDBSyncManager {
     );
     this.diceRollHandler.registerRollHandler(saveHandler);
 
-    const attackHandler = new AttackRollHandler(
-      services.diceExtractor,
-      services.rollBuilder
-    );
-    this.diceRollHandler.registerRollHandler(attackHandler);
-
     const abilityCheckHandler = new AbilityCheckRollHandler(
       services.diceExtractor,
       services.rollBuilder
