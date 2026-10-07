@@ -82,12 +82,6 @@ export class DDBSyncManager {
       new SaveRollHandler(diceExtractor, rollBuilder)
     );
 
-    // 3. Attack rolls — rollType === "to hit"
-    //    Creates usage card + D20Roll, stores usageId for step 4
-    this.diceRollHandler.registerRollHandler(
-      new AttackRollHandler(diceExtractor, rollBuilder)
-    );
-
     // 4. Damage rolls — rollType === "damage"
     //    Reads usageId stored by AttackRollHandler, creates DamageRoll linked to usage card
     //    MUST come before GenericRollHandler or damage rolls fall through to the generic handler

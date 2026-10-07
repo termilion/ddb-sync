@@ -1,22 +1,25 @@
 {
   "id": "ddb-sync",
   "title": "D&D Beyond Sync",
-  "version": "0.0.7",
-  "url": "https://github.com/AshDarkley/ddb-sync",
-  "manifest": "https://github.com/AshDarkley/ddb-sync/releases/latest/download/module.json",
-  "download": "https://github.com/AshDarkley/ddb-sync/releases/latest/download/module.zip",
+  "version": "0.0.7_alt",
+  "url": "https://github.com/termilion/ddb-sync",
+  "manifest": "https://github.com/termilion/ddb-sync/releases/latest/download/module.json",
+  "download": "https://github.com/termilion/ddb-sync/releases/latest/download/module.zip",
   "license": "MIT License",
-  "readme": "https://github.com/AshDarkley/ddb-sync/blob/main/README.md",
-  "changelog": "https://github.com/AshDarkley/ddb-sync/blob/main/CHANGELOG.md",
+  "readme": "htthttps://github.com/termilion/ddb-sync/blob/main/README.md",
+  "changelog": "https://github.com/termilion/ddb-sync/blob/main/CHANGELOG.md",
   "compatibility": {
     "minimum": "13",
-    "verified": "13"
+    "verified": "14"
   },
   "description": "Synchronizes dice rolls and character damage from D&D Beyond to Foundry VTT compatibility for Dice So Nice!, JB2A, and Midi QOL. Allows for manual rolls configured per actor. IMPORTANT!: Requires external DDB Proxy with manual customization.  See ddb-sync README for details.",
   "authors": [
     {
       "name": "AshDarkley",
       "patreon": "https://patreon.com/AshDarkley"
+    },
+    {
+      "name": "termilus"
     }
   ],
   "esmodules": [
