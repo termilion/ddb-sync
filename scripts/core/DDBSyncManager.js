@@ -10,7 +10,6 @@ import { CharacterMapper } from './services/CharacterMapper.js';
 import { DiceRollHandler } from '../dice/DiceRollHandler.js';
 import { InitiativeRollHandler } from '../dice/handlers/InitiativeRollHandler.js';
 import { GenericRollHandler } from '../dice/handlers/GenericRollHandler.js';
-import { DamageRollHandler } from '../dice/handlers/DamageRollHandler.js';
 import { MessageDeduplicator } from '../websocket/MessageDeduplicator.js';
 import { DiceInputDialog } from '../ui/DiceInputDialog.js';
 import { SaveRollHandler } from '../dice/handlers/SaveRollHandler.js';
@@ -81,13 +80,6 @@ export class DDBSyncManager {
     // 2. Saving throws — rollType === "save"
     this.diceRollHandler.registerRollHandler(
       new SaveRollHandler(diceExtractor, rollBuilder)
-    );
-
-    // 4. Damage rolls — rollType === "damage"
-    //    Reads usageId stored by AttackRollHandler, creates DamageRoll linked to usage card
-    //    MUST come before GenericRollHandler or damage rolls fall through to the generic handler
-    this.diceRollHandler.registerRollHandler(
-      new DamageRollHandler(diceExtractor, rollBuilder)
     );
 
     // 5. Ability checks and skill checks — rollType === "check"
