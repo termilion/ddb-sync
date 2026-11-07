@@ -43,6 +43,7 @@ export class DDBSyncManager {
 
     // Initialize dice input dialog with handler injection
     this.diceInputDialog = new DiceInputDialog(this.diceRollMessageHandler);
+    this.isGameMaster = game.user.name === 'Gamemaster';
 
     // Register message handlers and roll handlers
     this.registerHandlers();
@@ -117,6 +118,10 @@ export class DDBSyncManager {
   }
 
   async connect() {
+    if (!this.isGameMaster) {
+      return
+    }
+
     // Validate settings first
     const validation = SettingsValidator.validate();
     if (!validation.isValid) {
@@ -173,6 +178,9 @@ export class DDBSyncManager {
    * Uses message dispatcher pattern for extensibility
    */
   async handleDDBMessage(message) {
+    if (!this.isGameMaster) {
+      return
+    }
     try {
       // Create a unique key for this message
       const messageKey = this.createMessageKey(message);
